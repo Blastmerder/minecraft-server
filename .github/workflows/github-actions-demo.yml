@@ -5,13 +5,11 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-        - name: SSH into windows server and run bat file
+        - name: executing remote ssh commands using password
           uses: appleboy/ssh-action@v0.1.6
           with:
             host: ${{ secrets.HOST }}
             username: ${{ secrets.USERNAME }}
-            key: ${{ secrets.KEY }}
-            script: |
-                cd C:\Users\Blastmerder\desktop\minecraft-server
-                dir
-                upload.bat
+            password: ${{ secrets.PASSWORD }}
+            port: ${{ secrets.PORT }}
+            script: whoami
