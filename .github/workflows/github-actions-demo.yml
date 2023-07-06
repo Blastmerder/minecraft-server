@@ -5,5 +5,13 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./ # 👈 using action from the repository itself.
+        - name: SSH into windows server and run bat file
+          uses: appleboy/ssh-action@v0.1.6
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            key: ${{ secrets.KEY }}
+            script: |
+                cd C:\Users\Blastmerder\desktop\minecraft-server
+                dir
+                upload.bat
