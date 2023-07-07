@@ -9,9 +9,9 @@ jobs:
           uses: appleboy/ssh-action@v0.1.6
           with:
             host: ${{ secrets.HOST }}
-            username: ${{ secrets.Root }}
-            password: ${{ secrets.Password }}
+            username: ${{ secrets.ROOT }}
+            password: ${{ secrets.ROOTPASSWORD }}
             port: 22
             script: 
-              scp -r ./server ${{ secrets.Root }}@${{ secrets.Password }}:~/
-              ssh ${{ secrets.Root }}@${{ secrets.Password }} cd server; bash run.sh
+              scp -r ./server ${{ secrets.ROOT }}@${{ secrets.ROOTPASSWORD }}:~/
+              ssh ${{ secrets.ROOT }}@${{ secrets.ROOTPASSWORD }} cd server; bash run.sh
