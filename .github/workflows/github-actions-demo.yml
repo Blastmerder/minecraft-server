@@ -13,5 +13,5 @@ jobs:
             password: ${{ secrets.ROOTPASSWORD }}
             port: 22
             script: 
-              scp -r ./server ${{ secrets.ROOT }}@${{ secrets.ROOTPASSWORD }}:~/
-              ssh ${{ secrets.ROOT }}@${{ secrets.ROOTPASSWORD }} cd server; bash run.sh
+              scp -r ./server ${{ secrets.ROOT }}@${{ secrets.ID_ADDRESS }}:~/
+              ssh ${{ secrets.ROOT }}@${{ secrets.ID_ADDRESS }} cd server; bash run.sh
